@@ -4,8 +4,8 @@ jobs:
     check-bats-version:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/check@V2
-            - uses: actions/setup-node@V2
+            - uses: actions/check@v2
+            - uses: actions/setup-node@v2
               with:
                 node-version: '14'
             - run: npm install -g bats
