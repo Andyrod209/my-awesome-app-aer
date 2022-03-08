@@ -1,42 +1,39 @@
 name: Base Image Options
-on: 
+on:
   pull_request:
     branches: [main]
-
   workflow_dispatch:
 
 jobs:
   Single-Command:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@2
-    - run: echo Hello out there
+      - uses: actions/checkout@v2
+      - run: echo Hello out there
 
   Multi-line:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: |
-        ls
-        echo
-        java -version
-        echo
-        git --version
-        echo
-        mvn -v
-        gradle -v
-        ant -version
-        echo
-        echo @ANDROID_SDK_ROOT
-        echo
-        echo $SELENIUM_JARS
-        echo
-        echo $GITHUB_WORKSPACE
-        echo
-        whoami
-        echo
-        df
-        echo
-        env -0 | sort -z | tr '\0' '\n'
-
-    
+          ls
+          echo
+          java -version
+          echo
+          git --version
+          echo
+          mvn -v
+          gradle -v
+          ant -version
+          echo
+          echo $ANDROID_SDK_ROOT
+          echo
+          echo $SELENIUM_JARS
+          echo
+          echo $GITHUB_WORKSPACE
+          echo
+          whoami
+          echo
+          df
+          echo
+          env -0 | sort -z | tr '\0' '\n'
