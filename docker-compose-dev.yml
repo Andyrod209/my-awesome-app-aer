@@ -10,9 +10,9 @@ services:
       - .:/app
       - '/app/node_modules'
     ports:
-      - '3002:3000'
+      - '3001:3000'
 
-  docker-react-test:
+  my-awesome-app-test:
     container_name: awesome-app_test
     image: my-awesome-app-aer_my-awesome-app-dev
     volumes:
