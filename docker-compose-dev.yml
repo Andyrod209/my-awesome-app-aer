@@ -1,7 +1,7 @@
 version: '3.9'
 
 services:
-  web:
+  my-awesome-app-aer:
     container_name: my-awesome-app-dev
     build:
       context: .
