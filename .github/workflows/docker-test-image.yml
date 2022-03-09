@@ -18,9 +18,7 @@ jobs:
 
       - name: Env variables
         run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
-
-      - name: build docker img
-        run: docker build . --file Dockerfile --tag andyrod209/my-awesome-app-aer:latest
-
       - name: run tests
         run: docker run andyrod209/my-awesome-app-aer:latest npm test
+      - name: build docker img
+        run: docker build . --file Dockerfile --tag andyrod209/my-awesome-app-aer:latest
