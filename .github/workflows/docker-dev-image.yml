@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Env variables
-        run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB
+        run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
 
       - name: build docker img
         run: docker build . --file Dockerfile --tag andyrod209/my-awesome-app-aer:latest
