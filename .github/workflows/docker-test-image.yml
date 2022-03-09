@@ -1,0 +1,26 @@
+name: Docker Dev Image CI
+
+env: 
+  DATE_STAMP: $(date +%s)
+
+on:
+  push:
+  pull_request: 
+    branches: [main]
+  workflow_dispatch:
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Env variables
+        run: echo "date-stamp=${{env.DATE_STAMP}}" >> $GITHUB_ENV
+
+      - name: build docker img
+        run: docker build . --file Dockerfile --tag andyrod209/my-awesome-app-aer:latest
+
+      - name: run tests
+        run: docker run andyrod209/my-awesome-app-aer:latest npm test
