@@ -13,7 +13,7 @@ services:
       - '3001:3000'
 
   my-awesome-app-test:
-    container_name: awesome-app_test
+    container_name: awesome-app-test
     image: my-awesome-app-aer_my-awesome-app-dev
     volumes:
       - .:/app
