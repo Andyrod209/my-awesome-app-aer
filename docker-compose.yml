@@ -4,8 +4,8 @@ services:
   product-web:
     container_name: my-awesome-app-aer
     image: andyrod209/my-awesome-app-aer:latest
-    build: 
-      context: .
-      dockerfile: Dockerfile
+    # build: 
+    #   context: .
+    #   dockerfile: Dockerfile
     ports:
       - '80:8080'
